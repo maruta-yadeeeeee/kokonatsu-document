@@ -6,7 +6,7 @@
 
 以下のリンクから、各サービスの仕様書を確認できます。
 
-### 1. [KokoIP API](./kokonastu-ip%20api.md)
+### 1. [KokoIP API](./kokonastu-ip_api.md)
 パブリックIPアドレス（IPv4/IPv6）を素早く取得できるAPIの仕様書です。
 - プレーンテキスト、JSON、JSONP形式に対応
 - `ipify` との完全な互換性
