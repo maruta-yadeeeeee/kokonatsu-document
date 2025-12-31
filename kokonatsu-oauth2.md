@@ -19,8 +19,8 @@ https://kokonatsu.top
 
 OIDC互換のライブラリを使用する場合、以下のディスカバリURLから設定情報を自動取得できます。
 
-- **OpenID Configuration**: `https://kokonatsu.top/oauth/.well-known/openid-configuration`
-- **JWKS (JSON Web Key Set)**: `https://kokonatsu.top/oauth/.well-known/jwks.json`
+- **OpenID Configuration**: `https://kokonatsu.top/.well-known/openid-configuration`
+- **JWKS (JSON Web Key Set)**: `https://kokonatsu.top/.well-known/jwks.json`
 
 ## エンドポイント一覧
 
