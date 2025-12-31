@@ -289,6 +289,9 @@ KokoIP APIは以下の3つのアプローチでVPN/プロキシを検知しま�
 
 ---
 
+## テストページ
+https://pages.kokonatsu.top/maruta_yadeeeeeea/test/ip-api-test.html
+
 ## 技術仕様
 
 - **Dual-Stack Connectivity**: IPv4/IPv6両対応
