@@ -16,7 +16,7 @@ KokoIP APIは、シンプル・高速・軽量なパブリックIPアドレス�
 - **任意IPアドレス指定取得**: クエリで任意のIP情報取得
 - **主要なHTTPヘッダー対応**: Cloudflare/Nginx等のリバースプロキシ環境下でも正しいIP判別
 - **エラーハンドリング**: 不正なIP指定時はJSONでエラー返却
-- **最適化されたレスポンス**: nullフィールドは自動的に除外
+- **一貫性のあるレスポンス**: 指定した情報は存在しない場合でもnullとして返却
 
 ---
 
@@ -98,10 +98,11 @@ curl "https://ipv4.kokonatsu.top?format=json&include=geo"
 }
 ```
 
-> **注意**: 利用可能なデータがない場合、該当フィールドは省略されます（nullは表示されません）
+> **Note**: `include`パラメータで指定されたフィールドは、値が取得できない場合でも `null` としてレスポンスに含まれます。これによりクライアント側での型処理が一貫します。
 
 ### 5. VPN/プロキシ検知
 
+**VPN検出ありの例:**
 ```bash
 curl "https://ipv4.kokonatsu.top?format=json&include=detection&ip=8.8.8.8"
 ```
@@ -120,6 +121,25 @@ curl "https://ipv4.kokonatsu.top?format=json&include=detection&ip=8.8.8.8"
 }
 ```
 
+**検出なし（家庭用IPなど）の例:**
+```bash
+curl "https://ipv4.kokonatsu.top?format=json&include=detection&ip=1.2.3.4"
+```
+**Response:**
+```json
+{
+  "ip": "1.2.3.4",
+  "proxy_detection": {
+    "is_vpn": false,
+    "is_proxy": false,
+    "is_datacenter": false,
+    "is_hosting": false,
+    "risk_score": 0,
+    "provider_name": null
+  }
+}
+```
+
 #### proxy_detectionフィールドの詳細
 
 | フィールド | 型 | 説明 |
@@ -129,7 +149,7 @@ curl "https://ipv4.kokonatsu.top?format=json&include=detection&ip=8.8.8.8"
 | `is_datacenter` | boolean | データセンターIPとして検出された場合true |
 | `is_hosting` | boolean | ホスティングプロバイダーとして検出された場合true |
 | `risk_score` | 0-100 | リスクスコア（高いほど疑わしい） |
-| `provider_name` | string | 検出されたプロバイダー名（該当する場合のみ） |
+| `provider_name` | string \| null | 検出されたプロバイダー名 |
 
 ### 6. すべての情報を取得
 
@@ -276,7 +296,7 @@ KokoIP APIは以下の3つのアプローチでVPN/プロキシを検知しま�
 - **Privacy Focus**: アクセスログやリクエストログを一切保存しません。IP確認以外の目的でデータを保持・収集・記録することはありません
 - **MaxMind GeoLite2 DB利用**: 最新の地理情報・ASN情報を提供
 - **主要なHTTPヘッダー対応**: `cf-connecting-ip`, `x-forwarded-for` などからクライアントIPを自動判別
-- **効率的なレスポンス**: nullフィールドは自動的に除外され、帯域幅を削減
+- **Consistent Schema**: クライアント側でのパースを容易にするため、要求されたフィールドは常に存在します（値がない場合はnull）
 
 ---
 
