@@ -6,20 +6,20 @@
 
 以下のリンクから、各サービスの仕様書を確認できます。
 
-### 1. [KokoIP API](./kokonastu-ip_api.md)
-パブリックIPアドレス（IPv4/IPv6）を素早く取得できるAPIの仕様書です。
-- プレーンテキスト、JSON、JSONP形式に対応
-- `ipify` との完全な互換性
-- CORS対応
-
-### 2. [OAuth2 / OpenID Connect](./kokonatsu-oauth2.md)
+### 1. [OAuth2 / OpenID Connect](./kokonatsu-oauth2.md)
 ここなつアカウントを使用したシングルサインオン（SSO）実装のための仕様書です。
 - 標準的な OpenID Connect Core 1.0 に準拠
 - プロフィール情報、メールアドレスの取得
 - プロフィール情報、メールアドレスの取得
 - 開発者向け管理ダッシュボードの案内
 
-### 3. [Kokonatsu PureSight API](./kokonatsu-puresight.md)
+### 2. [Kokonatsu Cloud KokoIP API](https://cloud.kokonatsu.top/tool/ip_api/home)
+パブリックIPアドレス（IPv4/IPv6）を素早く取得できるAPIの仕様書です。
+- プレーンテキスト、JSON、JSONP形式に対応
+- `ipify` との完全な互換性
+- CORS対応
+
+### 3. [Kokonatsu Cloud PureSight API](https://cloud.kokonatsu.top/ai/puresight/home)
 AIを活用した、画像・テキスト兼用の不適切コンテンツ検知API。 
 - 画像のNSFW判定、テキスト解析をこのAPI一つで提供します。
 
