@@ -70,11 +70,11 @@ Discordサーバーを掲示板に登録して宣伝できるサービス。Bump
 
 ## 法的文書
 
-- [利用規約](./legal/terms/01-overview)
-- [プライバシーポリシー](./legal/privacy/01-overview)
+- [利用規約](./legal/terms/01-overview.md)
+- [プライバシーポリシー](./legal/privacy/01-overview.md)
 
 ---
 
 ## お問い合わせ
 
-ご不明な点は[お問い合わせページ](./legal/privacy/09-contact)よりご連絡ください。
+ご不明な点は[お問い合わせページ](./legal/privacy/09-contact.md)よりご連絡ください。
