@@ -1,41 +1,48 @@
-# Website
+# kokonatsu-docs
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+kokonatsu group が提供する各サービスの公式ドキュメントおよび利用規約・プライバシーポリシーを管理するリポジトリです。
 
-## Installation
+このサイトは [Docusaurus](https://docusaurus.io/) を使用して構築されており、GitHub Pages で公開されています。
 
+## 🌐 公開サイト
+**[docs.kokonatsu.top](https://docs.kokonatsu.top)**
+
+---
+
+## 🤝 貢献（プルリクエスト）について
+
+私たちはドキュメントの正確性と透明性を大切にしています。誤字脱字の修正、説明の改善、または新しいドキュメントの追加など、**皆さまからのプルリクエスト（PR）を心より歓迎します！**
+
+### プルリクエストの送り方
+1. このリポジトリを **Fork** します。
+2. 修正したいファイルを編集します（`docs/` フォルダ内の Markdown ファイル）。
+3. 自分のリポジトリにプッシュし、このリポジトリに対して **Pull Request** を作成してください。
+4. 管理者が内容を確認し、マージされると自動的に公開サイトへ反映されます。
+
+---
+
+## 🛠 開発者向け（ローカルでの実行方法）
+
+ドキュメントの見た目を手元で確認しながら編集したい場合は、以下の手順に従ってください。
+
+### 1. インストール
 ```bash
-yarn
+npm install
 ```
 
-## Local Development
-
+### 2. ローカルサーバーの起動
 ```bash
-yarn start
+npm start
+```
+起動後、ブラウザで `http://localhost:3000` を開くとプレビューを確認できます。
+
+### 3. ビルド
+```bash
+npm run build
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+---
 
-## Build
-
-```bash
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## 📄 ライセンス / 免責事項
+このリポジトリに含まれるドキュメントの著作権は **kokonatsu group** に帰属します。
+利用規約やプライバシーポリシーの適用については、公開サイトの最新版をご確認ください
